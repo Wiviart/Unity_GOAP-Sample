@@ -51,7 +51,7 @@ public class GAgent : MonoBehaviour
             {
                 if (!invoked)
                 {
-                    Invoke("CompleteAction", currentAction.duration);
+                    Invoke(nameof(CompleteAction), currentAction.duration);
                     invoked = true;
                 }
             }
@@ -87,6 +87,7 @@ public class GAgent : MonoBehaviour
         if (actionQueue != null && actionQueue.Count > 0)
         {
             currentAction = actionQueue.Dequeue();
+            
             if (currentAction.PrePerform())
             {
                 if (currentAction.target == null && currentAction.targetTag != "")

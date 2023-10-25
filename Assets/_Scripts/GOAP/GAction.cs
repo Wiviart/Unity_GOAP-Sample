@@ -12,7 +12,7 @@ public abstract class GAction : MonoBehaviour
     public float duration = 0;
     public WorldState[] preConditions;
     public WorldState[] afterEffects;
-    public NavMeshAgent agent;
+    internal NavMeshAgent agent;
 
     public Dictionary<string, int> preconditions;
     public Dictionary<string, int> effects;
@@ -42,7 +42,7 @@ public abstract class GAction : MonoBehaviour
             {
                 effects.Add(w.key, w.value);
             }
-            
+
     }
 
     public bool IsAchievable()
