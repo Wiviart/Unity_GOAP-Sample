@@ -31,18 +31,18 @@ public class GAgentVisualEditor : Editor
             string eff = "";
 
             foreach (KeyValuePair<string, int> p in a.preconditions)
-                pre += p.Key + ", ";
+                pre += p.Key;
             foreach (KeyValuePair<string, int> e in a.effects)
-                eff += e.Key + ", ";
+                eff += e.Key;
 
-            GUILayout.Label("====  " + a.GetType().ToString() + "(" + pre + ")(" + eff + ")");
+            GUILayout.Label($"==== {a.GetType().ToString()} ({pre}) ({eff})");
         }
 
         GUILayout.Label("Goals: ");
         foreach (KeyValuePair<SubGoal, int> g in agent.gameObject.GetComponent<GAgent>().goals)
         {
             GUILayout.Label("---: ");
-            foreach (KeyValuePair<string, int> sg in g.Key.sgoals)
+            foreach (KeyValuePair<string, int> sg in g.Key.sGoals)
                 GUILayout.Label("=====  " + sg.Key);
         }
         serializedObject.ApplyModifiedProperties();
