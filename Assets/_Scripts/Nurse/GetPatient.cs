@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GetPatient : GAction
 {
-    public override bool PostPerform()
+    public override bool PrePerform()
     {
         target = GWorld.Instance.GetAndRemovePatient();
 
@@ -14,8 +14,10 @@ public class GetPatient : GAction
         return true;
     }
 
-    public override bool PrePerform()
+    public override bool PostPerform()
     {
         return true;
     }
+
+
 }
