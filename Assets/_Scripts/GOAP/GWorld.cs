@@ -25,4 +25,21 @@ public sealed class GWorld
     {
         return world;
     }
+
+    //*******************************************************//
+    //*******************************************************//
+
+    static Queue<GameObject> patients = new Queue<GameObject>();
+
+    public void AddPatient(GameObject p)
+    {
+        patients.Enqueue(p);
+    }
+
+    public GameObject GetAndRemovePatient()
+    {
+        if (patients.Count == 0)
+            return null;
+        return patients.Dequeue();
+    }
 }
