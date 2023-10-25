@@ -9,7 +9,7 @@
     public override bool PostPerform()
     {
 
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         return true;
     }
 }
