@@ -73,7 +73,7 @@ public class GPlanner
         Debug.Log("The Plan is: ");
         foreach (GAction a in queue)
         {
-            Debug.Log("Q: " + a.actionName);
+            Debug.Log("Q: " + a.GetType().ToString());
         }
 
         return queue;
