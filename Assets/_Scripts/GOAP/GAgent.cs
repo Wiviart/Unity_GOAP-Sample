@@ -21,11 +21,13 @@ public class GAgent : MonoBehaviour
     public List<GAction> actions = new List<GAction>();
     public Dictionary<SubGoal, int> goals = new Dictionary<SubGoal, int>();
     public WorldStates beliefs = new WorldStates();
+    public GInventory inventory = new GInventory();
 
     GPlanner planner;
     Queue<GAction> actionQueue;
     public GAction currentAction;
     SubGoal currentGoal;
+    bool invoked = false;
 
     protected virtual void Start()
     {
@@ -35,7 +37,6 @@ public class GAgent : MonoBehaviour
     }
 
 
-    bool invoked = false;
     void CompleteAction()
     {
         currentAction.running = false;
@@ -66,7 +67,8 @@ public class GAgent : MonoBehaviour
 
             foreach (KeyValuePair<SubGoal, int> sg in sortedGoals)
             {
-                actionQueue = planner.plan(actions, sg.Key.sGoals, null);
+                actionQueue = planner.plan(actions, sg.Key.sGoals, beliefs);
+                
                 if (actionQueue != null)
                 {
                     currentGoal = sg.Key;

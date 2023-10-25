@@ -42,4 +42,38 @@ public sealed class GWorld
             return null;
         return patients.Dequeue();
     }
+
+    //*******************************************************//
+    //*******************************************************//
+
+    static Queue<GameObject> cubicles = new Queue<GameObject>();
+
+    public void StartCubicles()
+    {
+        cubicles.Clear();
+
+        GameObject[] cubics = GameObject.FindGameObjectsWithTag("Cubicle");
+        
+        foreach (var c in cubics)
+        {
+            cubicles.Enqueue(c);
+        }
+
+        if (cubics.Length > 0)
+        {
+            world.ModifyState("FreeCubicle", cubics.Length);
+        }
+    }
+
+    public void AddCubicle(GameObject p)
+    {
+        cubicles.Enqueue(p);
+    }
+
+    public GameObject GetAndRemoveCubicle()
+    {
+        if (cubicles.Count == 0)
+            return null;
+        return cubicles.Dequeue();
+    }
 }
