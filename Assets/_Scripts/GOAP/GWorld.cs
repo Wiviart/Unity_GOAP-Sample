@@ -10,6 +10,8 @@ public sealed class GWorld
     static GWorld()
     {
         world = new WorldStates();
+
+        StartCubicles();
     }
 
     private GWorld()
@@ -48,12 +50,12 @@ public sealed class GWorld
 
     static Queue<GameObject> cubicles = new Queue<GameObject>();
 
-    public void StartCubicles()
+    static void StartCubicles()
     {
         cubicles.Clear();
 
         GameObject[] cubics = GameObject.FindGameObjectsWithTag("Cubicle");
-        
+
         foreach (var c in cubics)
         {
             cubicles.Enqueue(c);

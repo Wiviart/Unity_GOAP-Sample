@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GInventory
 {
-    List<GameObject> items = new List<GameObject>();
+    public List<GameObject> items = new List<GameObject>();
 
     public void AddItem(GameObject i)
     {
@@ -38,7 +38,7 @@ public class GInventory
             }
         }
 
-        if (indexToRemove >= -1)
+        if (indexToRemove >= 1)
         {
             items.RemoveAt(indexToRemove);
         }

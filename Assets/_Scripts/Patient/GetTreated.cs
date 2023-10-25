@@ -16,6 +16,8 @@ public class GetTreated : GAction
     {
         // GWorld.Instance.GetWorld().ModifyState("FreeCubicle", 1);
         GWorld.Instance.GetWorld().ModifyState("Treated", 1);
+        beliefs.ModifyState("isCured", 1);
+        // Remove the cubicle from the list
         inventory.RemoveItem(target);
 
         return true;

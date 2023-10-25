@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -27,7 +27,7 @@ public abstract class GAction : MonoBehaviour
         effects = new Dictionary<string, int>();
     }
 
-    public void Awake()
+    private void Awake()
     {
         agent = this.gameObject.GetComponent<NavMeshAgent>();
 
