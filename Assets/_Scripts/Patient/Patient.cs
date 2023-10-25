@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Patient : GAgent
 {
-    // Start is called before the first frame update
     new void Start()
     {
         base.Start();
