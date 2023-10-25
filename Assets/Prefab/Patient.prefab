@@ -2663,6 +2663,7 @@ GameObject:
   - component: {fileID: 843083867}
   - component: {fileID: 843083868}
   - component: {fileID: 7881807148403966580}
+  - component: {fileID: 5628604278289219779}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -2733,7 +2734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a00e6c28b974a798eb6d871ba3c88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: GoToHospital
   cost: 1
   target: {fileID: 0}
   targetTag: Door
@@ -2755,7 +2755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6065cbf0814e84fe096ae7aa08d0acc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: GoToWaitingRoom
   cost: 1
   target: {fileID: 0}
   targetTag: WaitingArea
@@ -2779,7 +2778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ce71c2bc43e4322aa69d4adfa05158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Register
   cost: 1
   target: {fileID: 0}
   targetTag: Reception
@@ -2791,6 +2789,19 @@ MonoBehaviour:
   - key: hasRegistered
     value: 0
   running: 0
+--- !u!114 &5628604278289219779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881807149238628900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a8c5873a40498f9f97550fc5588c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAgent: {fileID: 0}
 --- !u!1 &7927236269272520591
 GameObject:
   m_ObjectHideFlags: 0
