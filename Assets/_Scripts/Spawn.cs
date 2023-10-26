@@ -25,7 +25,7 @@ public class Spawn : MonoBehaviour
             patient.name = "Patient " + i;
             patientPool.Add(patient);
 
-            Debug.Log("SpawnPatient " + i);
+            // Debug.Log("SpawnPatient " + i);
         }
     }
 
@@ -35,11 +35,11 @@ public class Spawn : MonoBehaviour
         {
             if (p.activeInHierarchy)
             {
-                Debug.Log("Patient " + p.name + " is active");
+                // Debug.Log("Patient " + p.name + " is active");
                 continue;
             }
 
-            Debug.Log("Start Patient " + p.name);
+            // Debug.Log("Start Patient " + p.name);
 
             p.SetActive(true);
             p.transform.position = this.transform.position;

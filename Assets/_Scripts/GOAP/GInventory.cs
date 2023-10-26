@@ -26,21 +26,6 @@ public class GInventory
 
     public void RemoveItem(GameObject i)
     {
-        int indexToRemove = -1;
-
-        foreach (var item in items)
-        {
-            indexToRemove++;
-
-            if (item == i)
-            {
-                break;
-            }
-        }
-
-        if (indexToRemove >= 1)
-        {
-            items.RemoveAt(indexToRemove);
-        }
+        items.Remove(i);
     }
 }
